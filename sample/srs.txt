@@ -1,0 +1,29 @@
+FRONT OF CARD
+As an instructor
+I want to check the number of assignments submitted by each student
+so that I know who is not on track
+Priority: M | Effort: 4 | Assignee: Hui
+BACK OF CARD
+- Write a program called check_student.py
+- Store student numbers in variable student_no.
+- Store assignment submission status files in variable assignments.
+- Execute the program in the following way: python check_student.py.
+- The output is a table.
+- The table has two columns, studentNumber and numberSubmissions.
+- Each row contains the number of submissions for a student number.
+- The rows are sorted in ascending order of number of submissions.
+CREATED BY instructor ON 2019-12-19
+UPDATED BY TA ON 2020-03-26
+
+
+FRONT OF CARD
+As an instructor
+I want to list all valid student numbers in a submission status file
+so that I can count how many students have submitted a particular assignment.
+Priority: M | Effort: 2 | Assignee: Hui
+BACK OF CARD
+- A submission status file contains any number of student numbers.
+- There must be a whitespace before and after each student number.
+- A valid student number must contain 12 digits and start with digit 2.
+CREATED BY instructor ON 2019-12-20
+UPDATED BY TA ON 2020-03-25
