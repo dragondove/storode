@@ -358,7 +358,7 @@ if __name__ == "__main__":
                         transfer_str_to_html(card_line) + '</span><br />'
 
             backs = ''
-            for card_line in requirement.front_of_card.split('\n'):
+            for card_line in requirement.back_of_card.split('\n'):
                 if card_line.strip() != '':
                     backs += '<span id="' + requirement.identifier + ':BACK' + \
                         card_line.split()[0] + '">' + \
