@@ -341,14 +341,14 @@ if __name__ == "__main__":
         out_file.write(
             '<style>:target{background-color:#ffff00;}th{overflow: hidden;text-overflow:ellipsis;}td{overflow:hidden;text-overflow:ellipsis;}</style><table border="1" width="94%" style="word-break:break-all;margin:0 auto;"><tr><th>Identifier</th><th>Front Card</th><th>Back Card</th><th>Date</th><th>Links</th></tr><tbody>')
         total_req_count = len(requirements)
-        finished_count = 0
+        covered_count = 0
         for _, requirement in requirements.items():
             link_str = ''
             for key, value in requirement.code_links.items():
                 link_str += '<a href="' + value + '">' + key + '</a><br />'
 
             if link_str != '':
-                finished_count += 1
+                covered_count += 1
 
             fronts = ''
             for card_line in requirement.front_of_card.split('\n'):
@@ -371,7 +371,10 @@ if __name__ == "__main__":
                            transfer_str_to_html(requirement.update_info)
                            + '</td><td>' + link_str + '</td></tr>')
         out_file.write('</tbody></table><br />')
-        problems.append('Conclusion: Total Requirements Count: ' + str(total_req_count) + ', Finished Requirements: ' +
-                        str(finished_count) + ', Completion Rate: ' + str(100 * round(finished_count / total_req_count, 4)) + '%.')
+        problems.append('Conclusion: Total Requirements Count: ' + str(total_req_count) + ', Covered Requirements: ' +
+                        str(covered_count) + ', Coverage Rate: ' + str(100 * round(covered_count / total_req_count, 4)) + '%.')
+        out_file.write('<p style="margin-left: 3%; margin-top: -2px;">')
         for problem in problems:
             out_file.write(problem + '<br />')
+
+        out_file.write('</p>')
